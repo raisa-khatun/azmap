@@ -29,21 +29,57 @@ import MapView from 'react-native-maps';
 
 
 const App: () => React$Node = () => {
+
+  var markers = [
+    {
+      latitude: 33.45179,
+      longitude: -112.022179,
+      title: 'Foo Place',
+      subtitle: '1234 Foo Drive'
+    }
+  ];
+
   return (
     //<>
     <View style={styles.container}>
     <MapView
         style={styles.map}
         initialRegion={{
-          latitude: 33.424190,
-          longitude: -111.879780,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitude: 33.45179,
+          longitude: -112.022179,
+          latitudeDelta: 0.9922,
+          longitudeDelta: 0.9922,
           zoomEnabled:true,
 
-
         }}
+        //annotations={markers}
+    >
+    <MapView.Marker
+                coordinate={{latitude: 33.45179,
+                longitude: -112.022179}}
+                title={"2770 E Van Buren St.Phoenix, AZ 85008"}
+                description={"(602) 273-9999"}
+     />
+     <MapView.Marker
+                    coordinate={{latitude: 33.34047,
+                    longitude:-111.68531}}
+                    title={"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233"}
+                    description={"(480) 962-7922"}
+         />
+    <MapView.Marker
+                    coordinate={{latitude: 33.43589,
+                    longitude:-112.07486}}
+                    title={"8825 N 23rd Ave., Ste. 100 Phoenix, AZ 85021"}
+                    description={"(480) 962-7922"}
     />
+    <MapView.Marker
+                    coordinate={{latitude: 33.5653,
+                    longitude:-112.10766}}
+                    title={"8825 N 23rd Ave., Ste. 100 Phoenix, AZ 85021"}
+                    description={"(480) 962-7922"}
+   />
+     </MapView>
+
     </View>
     /*
       <StatusBar barStyle="dark-content" />
