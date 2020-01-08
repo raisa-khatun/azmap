@@ -1,0 +1,38 @@
+[
+
+  {
+    "id": 1,
+    "name": "Center 1",
+    "latitude": 33.45179,
+    "longitude": -112.022179,
+    "title":"2770 E Van Buren St.Phoenix, AZ 85008",
+    "description":"(602) 273-9999"
+  },
+  {
+    "id": 2,
+    "name": "Center 2",
+    "latitude": 33.34047,
+    "longitude": -111.68531,
+    "title":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
+    "description":"(480) 962-7922"
+  },
+  {
+    "id": 3,
+    "name": "Center 3",
+    "latitude": 33.43589,
+    "longitude": -112.07486,
+    "title":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
+    "description":"(480) 962-7922"
+
+  },
+  {
+    "id": 4,
+    "name": "Center 4",
+    "latitude": 33.5653,
+    "longitude": -112.10766,
+    "title":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
+    "description":"(480) 962-7922"
+
+  }
+
+]
