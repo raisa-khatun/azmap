@@ -2,36 +2,84 @@
 
   {
     "id": 1,
-    "name": "Center 1",
     "latitude": 33.45179,
     "longitude": -112.022179,
-    "title":"2770 E Van Buren St.Phoenix, AZ 85008",
-    "description":"(602) 273-9999"
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"2770 E Van Buren St.Phoenix, AZ 85008",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(602) 273-9999",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
   },
   {
     "id": 2,
-    "name": "Center 2",
     "latitude": 33.34047,
     "longitude": -111.68531,
-    "title":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
-    "description":"(480) 962-7922"
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(480) 962-7922",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
   },
   {
     "id": 3,
-    "name": "Center 3",
-    "latitude": 33.43589,
-    "longitude": -112.07486,
-    "title":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
-    "description":"(480) 962-7922"
+    "latitude": 33.565300,
+    "longitude": -112.107658,
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"8825 N 23rd Ave., Ste. 100 Phoenix, AZ 85021",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(602) 861-2255",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
 
   },
   {
     "id": 4,
-    "name": "Center 4",
-    "latitude": 33.5653,
-    "longitude": -112.10766,
-    "title":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
-    "description":"(480) 962-7922"
+    "latitude": 33.404301,
+    "longitude": -111.815826,
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"560 S Bellview Mesa, AZ 85204",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(480) 962-7922",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
+
+  },
+  {
+    "id": 5,
+    "latitude": 33.380539,
+    "longitude": -111.825478,
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"358 E Javelina Ave. Mesa, AZ 85210",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(480) 507-3180",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
+
+  },
+  {
+    "id": 6,
+    "latitude": 33.306530,
+    "longitude": -111.856133,
+    "agency_name": "BAART Behavioral Health Services, Inc.",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"908 West Chandler Blvd., Ste. B4 Chandler, AZ 85225",
+    "website": "www.baartprograms.com",
+    "phone":"(480) 899-0200",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "sliding fee scale"]
 
   }
 

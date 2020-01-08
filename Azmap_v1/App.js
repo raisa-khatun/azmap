@@ -55,8 +55,8 @@ const App: () => React$Node = () => {
                        return  <MapView.Marker
                            key={point.id}
                            coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
-                           title={point.title}
-                           description={point.description}
+                           title={point.address}
+                           description={point.phone}
                          />
     })}
 
