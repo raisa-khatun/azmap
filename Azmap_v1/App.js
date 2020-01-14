@@ -56,7 +56,9 @@ const App: () => React$Node = () => {
                            key={point.id}
                            coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
                            title={point.address}
+                           snippet={point.opiod}
                            description={point.phone}
+
                          />
     })}
 
