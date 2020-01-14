@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -26,28 +26,51 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import MapView from 'react-native-maps';
+import Geolocation from '@react-native-community/geolocation';
 
 
 
 const App: () => React$Node = () => {
 
   const [med_centers, setMed]=useState(require('./data/med_centers.json'));
+  const [initialPosition, setInitialPosition]=useState({
+                                                        latitude: 33.45179,longitude: -112.022179,
+                                                        latitudeDelta: 0.9922,
+                                                        longitudeDelta: 0.9922});
 
-  console.log(med_centers);
+
+  const LATITUDE_DELTA = 0.0922
+  const LONGITUDE_DELTA = 0.9922
+
+
+  useEffect(() => {
+      Geolocation.getCurrentPosition((position) => {
+            var lat = parseFloat(position.coords.latitude)
+            var long = parseFloat(position.coords.longitude)
+
+            var initialRegion = {
+              latitude: lat,
+              longitude: long,
+              latitudeDelta: LATITUDE_DELTA,
+              longitudeDelta: LONGITUDE_DELTA,
+
+            }
+            setInitialPosition(initialRegion);
+
+          },
+          (error) => alert(JSON.stringify(error)),
+          {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000});
+
+
+
+    },[]);
+
 
   return (
-    //<>
     <View style={styles.container}>
     <MapView
         style={styles.map}
-        initialRegion={{
-          latitude: 33.45179,
-          longitude: -112.022179,
-          latitudeDelta: 0.9922,
-          longitudeDelta: 0.9922,
-          zoomEnabled:true,
-
-        }}
+        initialRegion={initialPosition}
 
     >
    {med_centers.map(point => {
