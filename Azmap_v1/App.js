@@ -93,10 +93,10 @@ const App: () => React$Node = () => {
                            onCalloutPress={() => {console.log("callout press")}}>
                            <Callout>
                                        <View>
-                                           <Text>{point.address}</Text>
-                                           <Text>{point.phone}</Text>
-                                           <Text>{point.opiod}</Text>
-                                           <Text>{point.website}</Text>
+                                           <Text style={styles.calloutTitle}>{point.address}</Text>
+                                           <Text style={styles.calloutDescription}>{point.phone}</Text>
+                                           <Text style={styles.calloutDescription}>opiod: {point.opiod}</Text>
+                                           <Text style={styles.calloutDescription}>{point.website}</Text>
                                        </View>
                            </Callout>
 
@@ -126,6 +126,14 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    calloutTitle: {
+            fontSize: 17,
+            marginBottom: 5,
+            fontWeight: "bold"
+        },
+    calloutDescription: {
+        fontSize: 14
     }
 
 });
