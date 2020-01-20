@@ -191,14 +191,13 @@
     "latitude": 33.425190,
     "longitude": -111.896606,
     "county": "maricopa",
-    "agency_name": "Valle del Sol, Inc.",
+    "agency_name": "Valle del Sol, Inc",
     "opiod": "yes",
     "alcohol": "yes",
-    "address":"509 S Rockford Dr. Tempe, AZ 85281",
+    "address": "509 S Rockford Dr. Tempe, AZ 85281",
     "website": "www.valledelsol.com",
-    "phone":"(602) 258-6797 x 100",
+    "phone": "(602) 258-6797 x 100",
     "payment": ["AHCCCS", "private insurance","self-pay"]
-
   },
   {
     "id": 15,

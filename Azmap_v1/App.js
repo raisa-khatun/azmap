@@ -27,6 +27,7 @@ import {
 import {Callout, Marker} from 'react-native-maps';
 import MapView from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
+import { orderByDistance } from 'geolib';
 
 
 
@@ -41,6 +42,7 @@ const App: () => React$Node = () => {
   const [currentLat, setCurrentLat]=useState(33.45179);
   const [currentLong, setCurrentLong]=useState(-112.022179);
   const [selectedPoint, setSelectedPoint]=useState(null);
+  const [pointIncreasing, setpointIncreasing]=useState(null);
 
   const window = Dimensions.get('window');
   const { width, height }  = window
@@ -64,11 +66,16 @@ const App: () => React$Node = () => {
             setCurrentLat(lat);
             setCurrentLong(long);
 
+            /*getting points according to their distances distance*/
+            var list_of_points=[];
+            med_centers.map(point => {
+            list_of_points.push({ latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude) });
+            })
+            setpointIncreasing(orderByDistance({ latitude: lat, longitude: long},list_of_points));
+
           },
           (error) => alert(JSON.stringify(error)),
           {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000});
-
-
 
 
     },[]);
@@ -79,11 +86,15 @@ const App: () => React$Node = () => {
     <MapView
         style={styles.map}
         initialRegion={initialPosition}
+        minZoomLevel={12}
+        showsUserLocation={true}
 
     >
    <Marker
        coordinate={{latitude: currentLat, longitude:currentLong}}
        title={"My location"}
+       //image={require('./data/map-marker.png')}
+
     />
    {med_centers.map(point => {
     //console.log(point.id);
@@ -104,7 +115,7 @@ const App: () => React$Node = () => {
 
 
     })}
-    {console.log("------------------------")}
+    {console.log(pointIncreasing)}
 
 
 
