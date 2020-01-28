@@ -28,6 +28,7 @@ import {Callout, Marker} from 'react-native-maps';
 import MapView from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import { orderByDistance } from 'geolib';
+import MapViewDirections from 'react-native-maps-directions';
 
 
 
@@ -42,7 +43,9 @@ const App: () => React$Node = () => {
   const [currentLat, setCurrentLat]=useState(33.45179);
   const [currentLong, setCurrentLong]=useState(-112.022179);
   const [selectedPoint, setSelectedPoint]=useState(null);
-  const [pointIncreasing, setpointIncreasing]=useState(null);
+  const [pointIncreasing, setpointIncreasing]=useState([{latitude:33.45179,longitude:-112.022179}]);
+  const [nearestTime, setNearestTime]=useState(0);
+
 
   const window = Dimensions.get('window');
   const { width, height }  = window
@@ -53,8 +56,8 @@ const App: () => React$Node = () => {
       Geolocation.getCurrentPosition((position) => {
             var lat = parseFloat(position.coords.latitude)
             var long = parseFloat(position.coords.longitude)
-            console.log("lat:",lat);
-            console.log("long:",long);
+            //console.log("lat:",lat);
+            //console.log("long:",long);
             var initialRegion = {
               latitude: lat,
               longitude: long,
@@ -69,13 +72,15 @@ const App: () => React$Node = () => {
             /*getting points according to their distances distance*/
             var list_of_points=[];
             med_centers.map(point => {
-            list_of_points.push({ latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude) });
+                list_of_points.push({ latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude) });
             })
             setpointIncreasing(orderByDistance({ latitude: lat, longitude: long},list_of_points));
+
 
           },
           (error) => alert(JSON.stringify(error)),
           {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000});
+
 
 
     },[]);
@@ -97,28 +102,55 @@ const App: () => React$Node = () => {
 
     />
    {med_centers.map(point => {
-    //console.log(point.id);
-                       return  <Marker
-                           key={point.id}
-                           coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
-                           onCalloutPress={() => {console.log("callout press")}}>
-                           <Callout>
-                                       <View>
-                                           <Text style={styles.calloutTitle}>{point.address}</Text>
-                                           <Text style={styles.calloutDescription}>{point.phone}</Text>
-                                           <Text style={styles.calloutDescription}>opiod: {point.opiod}</Text>
-                                           <Text style={styles.calloutDescription}>{point.website}</Text>
-                                       </View>
-                           </Callout>
+        if(point.latitude== pointIncreasing[0].latitude&&point.longitude==pointIncreasing[0].longitude)
+        return <Marker
+                             key={point.id}
+                             coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
+                             onCalloutPress={() => {}}>
+                             <Callout>
+                                 <View>
+                                     <Text style={styles.calloutTitle}>{point.address}</Text>
+                                     <Text style={styles.calloutDescription}>ETA: {nearestTime.toFixed(2)} min</Text>
+                                     <Text style={styles.calloutDescription}>{point.phone}</Text>
+                                     <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
+                                     <Text style={styles.calloutDescription}>{point.website}</Text>
 
-                        </Marker>
+                                 </View>
+                             </Callout>
 
+                           </Marker>
+        else
+            return <Marker
+                        key={point.id}
+                        coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
+                        onCalloutPress={() => {}}>
+                        <Callout>
+                            <View>
+                                <Text style={styles.calloutTitle}>{point.address}</Text>
+                                <Text style={styles.calloutDescription}>{point.phone}</Text>
+                                <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
+                                <Text style={styles.calloutDescription}>{point.website}</Text>
+
+                            </View>
+                        </Callout>
+
+                      </Marker>
 
     })}
-    {console.log(pointIncreasing)}
+    <MapViewDirections
+        origin={{latitude: currentLat, longitude:currentLong}}
+        destination={{latitude: pointIncreasing[0].latitude, longitude:pointIncreasing[0].longitude}}
+        apikey={"AIzaSyCRmPE7agQP1spEtXzM5zl7VB-oRj6t1E0"}
+        strokeWidth={4}
+        strokeColor="green"
+        tappable={true}
+        onReady={result => {
+            console.log("Duration:",result.duration,"min");
+            setNearestTime(result.duration);
 
+            }}
 
-
+      />
 
    </MapView>
 
