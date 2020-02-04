@@ -15,6 +15,7 @@ import {
   Text,
   StatusBar,
   Dimensions,
+  Button
 } from 'react-native';
 
 import {
@@ -91,46 +92,48 @@ const App: () => React$Node = () => {
     <MapView
         style={styles.map}
         initialRegion={initialPosition}
-        minZoomLevel={12}
+        //minZoomLevel={11}
         showsUserLocation={true}
+        zoomEnabled={true}
 
     >
-   <Marker
-       coordinate={{latitude: currentLat, longitude:currentLong}}
-       title={"My location"}
-       //image={require('./data/map-marker.png')}
 
-    />
+
    {med_centers.map(point => {
         if(point.latitude== pointIncreasing[0].latitude&&point.longitude==pointIncreasing[0].longitude)
-        return <Marker
+        return <Marker style={styles.marker1}
                              key={point.id}
                              coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
                              onCalloutPress={() => {}}>
-                             <Callout>
-                                 <View>
+                             <Callout style={styles.callout1}>
+                                 <View style={styles.view1}>
                                      <Text style={styles.calloutTitle}>{point.address}</Text>
                                      <Text style={styles.calloutDescription}>ETA: {nearestTime.toFixed(2)} min</Text>
                                      <Text style={styles.calloutDescription}>{point.phone}</Text>
-                                     <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
                                      <Text style={styles.calloutDescription}>{point.website}</Text>
 
                                  </View>
+                                 <View style={styles.view2}>
+                                     <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
+                                 </View>
+
                              </Callout>
 
                            </Marker>
         else
-            return <Marker
+            return <Marker style={styles.marker1}
                         key={point.id}
                         coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
                         onCalloutPress={() => {}}>
-                        <Callout>
-                            <View>
+                        <Callout style={styles.callout1}>
+                            <View style={styles.view1}>
                                 <Text style={styles.calloutTitle}>{point.address}</Text>
                                 <Text style={styles.calloutDescription}>{point.phone}</Text>
-                                <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
                                 <Text style={styles.calloutDescription}>{point.website}</Text>
 
+                            </View>
+                            <View style={styles.view2}>
+                                <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
                             </View>
                         </Callout>
 
@@ -153,7 +156,15 @@ const App: () => React$Node = () => {
       />
 
    </MapView>
-
+    <View style={styles.buttonView}>
+        <Button
+            style={{fontSize: 20, color: 'green'}}
+            styleDisabled={{color: 'red'}}
+            //onPress={() => this._handlePress()}
+            title="Press Me"
+        >Press me
+        </Button>
+     </View>
    </View>
 
   );
@@ -163,20 +174,36 @@ const styles = StyleSheet.create({
    map:{
       width: Dimensions.get('window').width,
       height: Dimensions.get('window').height,
+
     },
     container:{
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+
     },
     calloutTitle: {
-            fontSize: 17,
-            marginBottom: 5,
+            fontSize: 14,
             fontWeight: "bold"
         },
     calloutDescription: {
-        fontSize: 14
+        fontSize: 14, fontWeight: "bold"
+    },
+    buttonView:{
+         position: 'absolute', top: 25, right: 25
+    },
+    marker1:{
+        height:300, backgroundColor: 'red', padding:5
+    },
+    callout1:{
+        flex: 1, flexDirection: 'row', backgroundColor: 'red'
+    },
+    view1:{
+        width: 150, height:100, padding: 5, alignSelf: 'flex-start', backgroundColor: 'blue'
+    },
+    view2:{
+        width: 150, height:100, padding: 5, alignSelf: 'flex-end', backgroundColor: 'green'
     }
 
 });
