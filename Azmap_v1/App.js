@@ -101,11 +101,11 @@ const App: () => React$Node = () => {
 
    {med_centers.map(point => {
         if(point.latitude== pointIncreasing[0].latitude&&point.longitude==pointIncreasing[0].longitude)
-        return <Marker style={styles.marker1}
+        return <Marker
                              key={point.id}
                              coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
                              onCalloutPress={() => {}}>
-                             <Callout style={styles.callout1}>
+                             <Callout style={styles.callout1} tooltip={true}>
                                  <View style={styles.view1}>
                                      <Text style={styles.calloutTitle}>{point.address}</Text>
                                      <Text style={styles.calloutDescription}>ETA: {nearestTime.toFixed(2)} min</Text>
@@ -121,20 +121,22 @@ const App: () => React$Node = () => {
 
                            </Marker>
         else
-            return <Marker style={styles.marker1}
+            return <Marker style={styles.m1}
                         key={point.id}
                         coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
                         onCalloutPress={() => {}}>
-                        <Callout style={styles.callout1}>
-                            <View style={styles.view1}>
-                                <Text style={styles.calloutTitle}>{point.address}</Text>
-                                <Text style={styles.calloutDescription}>{point.phone}</Text>
-                                <Text style={styles.calloutDescription}>{point.website}</Text>
+                        <Callout style={styles.callout1}  tooltip={true}>
 
-                            </View>
-                            <View style={styles.view2}>
-                                <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
-                            </View>
+                                <View style={styles.view1}>
+                                    <Text style={styles.calloutTitle}>{point.address}</Text>
+                                    <Text style={styles.calloutDescription}>{point.phone}</Text>
+                                    <Text style={styles.calloutDescription}>{point.website}</Text>
+
+                                </View>
+                                <View style={styles.view2}>
+                                    <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
+                                </View>
+
                         </Callout>
 
                       </Marker>
@@ -193,17 +195,20 @@ const styles = StyleSheet.create({
     buttonView:{
          position: 'absolute', top: 25, right: 25
     },
-    marker1:{
-        height:300, backgroundColor: 'red', padding:5
+    m1:{
+
     },
     callout1:{
-        flex: 1, flexDirection: 'row', backgroundColor: 'red'
+        flex:1,flexDirection: 'row',borderWidthLeft:3,borderRadius:10, overflow:'hidden'
     },
     view1:{
-        width: 150, height:100, padding: 5, alignSelf: 'flex-start', backgroundColor: 'blue'
+        width:"50%", height:100, padding: 5, alignSelf:'flex-start', backgroundColor:'blue'
     },
     view2:{
-        width: 150, height:100, padding: 5, alignSelf: 'flex-end', backgroundColor: 'green'
+        width:"50%", height:100, padding: 5, alignSelf:'flex-end', backgroundColor:'green'
+    },
+    marker1:{
+       marginLeft:0,padding:0, borderRadius:10
     }
 
 });
