@@ -46,11 +46,12 @@ const App: () => React$Node = () => {
   const [selectedPoint, setSelectedPoint]=useState(null);
   const [pointIncreasing, setpointIncreasing]=useState([{latitude:33.45179,longitude:-112.022179}]);
   const [nearestTime, setNearestTime]=useState(0);
+  const [showMarker, setShowMarker]=useState(false);
 
 
   const window = Dimensions.get('window');
   const { width, height }  = window
-  const LATITUDE_DELTA = 0.0030;
+  const LATITUDE_DELTA = 0.000;
   const LONGITUDE_DELTA=LATITUDE_DELTA + (width / height);
 
   useEffect(() => {
@@ -120,8 +121,9 @@ const App: () => React$Node = () => {
                              </Callout>
 
                            </Marker>
-        else
-            return <Marker style={styles.m1}
+        else{
+           // if(showMarker==true){
+                return <Marker style={styles.m1}
                         key={point.id}
                         coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
                         onCalloutPress={() => {}}>
@@ -140,6 +142,9 @@ const App: () => React$Node = () => {
                         </Callout>
 
                       </Marker>
+          //  }
+
+        }
 
     })}
     <MapViewDirections
@@ -162,9 +167,9 @@ const App: () => React$Node = () => {
         <Button
             style={{fontSize: 20, color: 'green'}}
             styleDisabled={{color: 'red'}}
-            //onPress={() => this._handlePress()}
-            title="Press Me"
-        >Press me
+             onPress={() => {setShowMarker(true)}}
+            title="See markers"
+        >See Markers
         </Button>
      </View>
    </View>
@@ -187,29 +192,25 @@ const styles = StyleSheet.create({
     },
     calloutTitle: {
             fontSize: 14,
-            fontWeight: "bold"
+            fontWeight: "bold",
+            padding:1
         },
     calloutDescription: {
-        fontSize: 14, fontWeight: "bold"
+        fontSize: 14, fontWeight: "bold",padding:1
     },
     buttonView:{
          position: 'absolute', top: 25, right: 25
     },
-    m1:{
-
-    },
     callout1:{
-        flex:1,flexDirection: 'row',borderWidthLeft:3,borderRadius:10, overflow:'hidden'
+        flex:2,flexDirection: 'row', overflow:'hidden', borderRadius:10
     },
     view1:{
-        width:"50%", height:100, padding: 5, alignSelf:'flex-start', backgroundColor:'blue'
+        width:"50%", height:100, padding: 5, alignSelf:'flex-start', backgroundColor:'rgb(0,255,255)'
     },
     view2:{
-        width:"50%", height:100, padding: 5, alignSelf:'flex-end', backgroundColor:'green'
+        width:"50%", height:100, padding: 5, alignSelf:'flex-end', backgroundColor:'rgb(0,128,128)'
     },
-    marker1:{
-       marginLeft:0,padding:0, borderRadius:10
-    }
+
 
 });
 
