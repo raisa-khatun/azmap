@@ -2,8 +2,8 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
- * @format
- * @flow
+ * @author Raisa
+ *
  */
 
 import React, { useState,useEffect } from 'react';
@@ -46,7 +46,7 @@ const App: () => React$Node = () => {
   const [selectedPoint, setSelectedPoint]=useState(null);
   const [pointIncreasing, setpointIncreasing]=useState([{latitude:33.45179,longitude:-112.022179}]);
   const [nearestTime, setNearestTime]=useState(0);
-  const [showMarker, setShowMarker]=useState(false);
+  //const [showMarker, setShowMarker]=useState(false);
 
 
   const window = Dimensions.get('window');
@@ -101,26 +101,29 @@ const App: () => React$Node = () => {
 
 
    {med_centers.map(point => {
-        if(point.latitude== pointIncreasing[0].latitude&&point.longitude==pointIncreasing[0].longitude)
-        return <Marker
-                             key={point.id}
-                             coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
-                             onCalloutPress={() => {}}>
-                             <Callout style={styles.callout1} tooltip={true}>
-                                 <View style={styles.view1}>
-                                     <Text style={styles.calloutTitle}>{point.address}</Text>
-                                     <Text style={styles.calloutDescription}>ETA: {nearestTime.toFixed(2)} min</Text>
-                                     <Text style={styles.calloutDescription}>{point.phone}</Text>
-                                     <Text style={styles.calloutDescription}>{point.website}</Text>
+        if(point.latitude== pointIncreasing[0].latitude&&point.longitude==pointIncreasing[0].longitude){
+            return <Marker
+                     key={point.id}
+                     coordinate={{latitude: parseFloat(point.latitude), longitude:parseFloat(point.longitude)}}
+                     onCalloutPress={() => {}}>
+                     <Callout style={styles.callout1} tooltip={true}>
+                         <View style={styles.view1}>
+                             <Text style={styles.calloutTitle}>{point.address}</Text>
+                             <Text style={styles.calloutDescription}>ETA: {nearestTime.toFixed(2)} min</Text>
+                             <Text style={styles.calloutDescription}>{point.phone}</Text>
+                             <Text style={styles.calloutDescription}>{point.website}</Text>
 
-                                 </View>
-                                 <View style={styles.view2}>
-                                     <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
-                                 </View>
+                         </View>
+                         <View style={styles.view2}>
+                             <Text style={styles.calloutDescription}>opioid:{point.opiod}</Text>
+                         </View>
 
-                             </Callout>
+                     </Callout>
 
-                           </Marker>
+                   </Marker>
+
+
+        }
         else{
            // if(showMarker==true){
                 return <Marker style={styles.m1}
@@ -136,7 +139,7 @@ const App: () => React$Node = () => {
 
                                 </View>
                                 <View style={styles.view2}>
-                                    <Text style={styles.calloutDescription}>opiod:{point.opiod}</Text>
+                                    <Text style={styles.calloutDescription}>opioid:{point.opiod}</Text>
                                 </View>
 
                         </Callout>
@@ -167,9 +170,9 @@ const App: () => React$Node = () => {
         <Button
             style={{fontSize: 20, color: 'green'}}
             styleDisabled={{color: 'red'}}
-             onPress={() => {setShowMarker(true)}}
-            title="See markers"
-        >See Markers
+             onPress={() => { }}
+            title="Menu"
+        >Menu
         </Button>
      </View>
    </View>
