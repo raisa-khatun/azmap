@@ -10,15 +10,19 @@ import {
   TouchableHighlight
 } from 'react-native';
 import { createStackNavigator} from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, NavigationEvents } from 'react-navigation';
+import callNumber from './PhoneCall.js';
 
 export default class SOS extends Component {
-  render() {
+  render(
+
+  ) {
     return (
       <View style={styles.container}>
+      <NavigationEvents onDidFocus={() => console.log('I am triggered')} />
       <TouchableHighlight
               style ={styles.button}>
-              <Button onPress={this._onPressButton}
+              <Button onPress={()=>callNumber(4802870343)}
               title="SOS"
               accessibilityLabel="Learn more about this button"
             />

@@ -22,16 +22,17 @@ import Geolocation from '@react-native-community/geolocation';
 import { orderByDistance } from 'geolib';
 import MapViewDirections from 'react-native-maps-directions';
 import { createStackNavigator} from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, NavigationEvents } from 'react-navigation';
+
 
 export default function Map(props){
 
   const [med_centers, setMed]=useState(require('../data/med_centers.json'));
   const [initialPosition, setInitialPosition]=useState({
                                                         latitude: 33.45179,longitude: -112.022179,
-                                                        latitudeDelta: 0.0009,
-                                                        longitudeDelta: 0.0009,
-                                                        zoomEnabled:true});
+                                                        latitudeDelta: 0.800,
+                                                        longitudeDelta: 0.800,
+                                                        });
   const [currentLat, setCurrentLat]=useState(33.45179);
   const [currentLong, setCurrentLong]=useState(-112.022179);
   const [selectedPoint, setSelectedPoint]=useState(null);
@@ -81,6 +82,7 @@ export default function Map(props){
 
   return (
     <View style={styles.container}>
+    <NavigationEvents onDidFocus={() => console.log('I am triggered')} />
     <MapView
         style={styles.map}
         initialRegion={initialPosition}
