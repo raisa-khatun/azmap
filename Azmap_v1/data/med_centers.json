@@ -1,0 +1,245 @@
+[
+
+  {
+    "id": 1,
+    "latitude": 33.45179,
+    "longitude": -112.022179,
+    "county": "maricopa",
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"2770 E Van Buren St.Phoenix, AZ 85008",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(602) 273-9999",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
+  },
+  {
+    "id": 2,
+    "latitude": 33.34047,
+    "longitude": -111.68531,
+    "county": "maricopa",
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"1550 N Stonehedge Dr., Ste. 104 Gilber, AZ 85233",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(480) 962-7922",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
+  },
+  {
+    "id": 3,
+    "latitude": 33.565300,
+    "longitude": -112.107658,
+    "county": "maricopa",
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"8825 N 23rd Ave., Ste. 100 Phoenix, AZ 85021",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(602) 861-2255",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
+
+  },
+  {
+    "id": 4,
+    "latitude": 33.404301,
+    "longitude": -111.815826,
+    "county": "maricopa",
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"560 S Bellview Mesa, AZ 85204",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(480) 962-7922",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
+
+  },
+  {
+    "id": 5,
+    "latitude": 33.380539,
+    "longitude": -111.825478,
+    "county": "maricopa",
+    "agency_name": "Community Bridges",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"358 E Javelina Ave. Mesa, AZ 85210",
+    "website": "www.communitybridgesaz.org",
+    "phone":"(480) 507-3180",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "self-pay"]
+
+  },
+  {
+    "id": 6,
+    "latitude": 33.306530,
+    "longitude": -111.856133,
+    "county": "maricopa",
+    "agency_name": "BAART Behavioral Health Services, Inc.",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"908 West Chandler Blvd., Ste. B4 Chandler, AZ 85225",
+    "website": "www.baartprograms.com",
+    "phone":"(480) 899-0200",
+    "payment": ["AHCCCS", "Medicare", "private",
+      "insurance", "sliding fee scale"]
+
+  },
+  {
+    "id": 7,
+    "latitude": 33.484470,
+    "longitude": -111.909988,
+    "county": "maricopa",
+    "agency_name": "Scottsdale Treatment Institute PLC",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"3200 N Hayden Rd., Suite 170 Scottsdale, AZ 85251",
+    "website": "www.scottsdaletreatment.com",
+    "phone":"(480) 429-9044 x 119",
+    "payment": ["private","insurance", "sliding fee scale"]
+
+  },
+  {
+    "id": 8,
+    "latitude": 33.423611,
+    "longitude": -112.082413,
+    "county": "maricopa",
+    "agency_name": "Southwest Behavioral Health Services",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"1424 S 7th St Ave., Bldg. C Phoenix, AZ 85007",
+    "website": "www.sbhservices.org",
+    "phone":"(602)258-3600",
+    "payment": ["AHCCCS","private","insurance"]
+
+  },
+  {
+    "id": 9,
+    "latitude": 33.423611,
+    "longitude": -112.082413,
+    "county": "maricopa",
+    "agency_name": "Southwest Behavioral Health Services",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"1424 S 7th St Ave., Bldg. C Phoenix, AZ 85007",
+    "website": "www.sbhservices.org",
+    "phone":"(602)258-3600",
+    "payment": ["AHCCCS","private","insurance"]
+
+  },
+  {
+    "id": 10,
+    "latitude": 33.494770,
+    "longitude": -112.060722,
+    "county": "maricopa",
+    "agency_name": "Assisted Recovery Centers of America",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address":"1000 E Indian School Rd., Ste B Phoenix, AZ 85014",
+    "website": "www.assistedrecovery.com",
+    "phone":"(602)264-7897",
+    "payment": ["private", "insurance", "self-pay(assist with AHCCCS reimbursement)"]
+
+  },
+  {
+    "id": 11,
+    "latitude": 33.494598,
+    "longitude": -112.153358,
+    "county": "maricopa",
+    "agency_name": "Addiction Resources, Inc.",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"4337 W Indian School Rd., Ste. 107 Phoenix, AZ 85031",
+    "website": "www.addictionresourcesinc.com",
+    "phone":"(602) 233-9401",
+    "payment": ["self-pay"]
+
+  },
+  {
+    "id": 12,
+    "latitude": 33.340469,
+    "longitude": -111.685310,
+    "county": "maricopa",
+    "agency_name": "Valle del Sol, Inc.",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"4135 S Power Rd. Ste. 108 Mesa, AZ 85212",
+    "website": "www.valledelsol.com",
+    "phone":"(602) 258-6797 x 931",
+    "payment": ["AHCCCS", "private insurance","self-pay"]
+
+  },
+  {
+    "id": 13,
+    "latitude": 33.435890,
+    "longitude": -112.074860,
+    "county": "maricopa",
+    "agency_name": "Valle del Sol, Inc.",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"1209 S 1st Ave. Phoenix, AZ 85033",
+    "website": "www.valledelsol.com",
+    "phone":"(602) 258-6797 x 931",
+    "payment": ["AHCCCS", "private insurance","self-pay"]
+
+  },
+  {
+    "id": 14,
+    "latitude": 33.425190,
+    "longitude": -111.896606,
+    "county": "maricopa",
+    "agency_name": "Valle del Sol, Inc",
+    "opiod": "yes",
+    "alcohol": "yes",
+    "address": "509 S Rockford Dr. Tempe, AZ 85281",
+    "website": "www.valledelsol.com",
+    "phone": "(602) 258-6797 x 100",
+    "payment": ["AHCCCS", "private insurance","self-pay"]
+  },
+  {
+    "id": 15,
+    "latitude": 33.411600,
+    "longitude": -111.682460,
+    "county": "maricopa",
+    "agency_name": "New Hope Behavioral Health",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"215 S Power Rd., Ste. 114 Mesa, AZ 85206",
+    "website": "www.nhbhc.net",
+    "phone":"(480) 981-1022",
+    "payment": ["AHCCCS", "self-pay"]
+
+  },
+  {
+    "id": 16,
+    "latitude": 33.492280,
+    "longitude": -112.029850,
+    "county": "maricopa",
+    "agency_name": "Community Medical Services Inc. (Alpha Medical Services)",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"3825 N 24th St. Phoenix, AZ 85016",
+    "website": "www.cmsaz.net",
+    "phone":"(602) 955-7997",
+    "payment": ["AHCCCS", "self-pay"]
+
+  },
+  {
+    "id": 17,
+    "latitude": 33.552650,
+    "longitude": -112.108570,
+    "county": "maricopa",
+    "agency_name": "Community Medical Services Inc.",
+    "opiod": "yes",
+    "alcohol": "no",
+    "address":"2301 W Northern Ave. Phoenix, AZ 85020",
+    "website": "www.cmsaz.net",
+    "phone":"(602) 866-9378",
+    "payment": ["AHCCCS", "private insurance"]
+
+  }
+
+]
