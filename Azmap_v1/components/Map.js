@@ -1,3 +1,8 @@
+/*
+*@author Raisa
+*Feb 03 2020
+*/
+
 import React, { useState,useEffect } from 'react';
 import {
   StyleSheet,
@@ -146,7 +151,7 @@ export default function Map(props){
     <MapViewDirections
         origin={{latitude: currentLat, longitude:currentLong}}
         destination={{latitude: pointIncreasing[0].latitude, longitude:pointIncreasing[0].longitude}}
-        apikey={"AIzaSyCRmPE7agQP1spEtXzM5zl7VB-oRj6t1E0"}
+        apikey={"API Key"}
         strokeWidth={4}
         strokeColor="green"
         tappable={true}
