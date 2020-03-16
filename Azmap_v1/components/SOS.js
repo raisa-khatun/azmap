@@ -1,3 +1,7 @@
+/*
+*@author Raisa
+*Feb 03 2020
+*/
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -20,19 +24,14 @@ export default class SOS extends Component {
     return (
       <View style={styles.container}>
       <NavigationEvents onDidFocus={() => console.log('I am triggered')} />
-      <TouchableHighlight
-              style ={styles.button}>
-              <Button onPress={()=>callNumber(4802870343)}
-              title="SOS"
-              accessibilityLabel="Learn more about this button"
-            />
+      <TouchableHighlight onPress={()=>callNumber(4802870343)}
+              style ={styles.button1}>
+              <Text style={{fontSize:15, color:"#fff"}}>SOS</Text>
       </TouchableHighlight>
-      <TouchableHighlight
-            style ={styles.button}>
-           <Button
-             title="Go to Map"
-             onPress={() => this.props.navigation.navigate('Map')}
-           />
+      <TouchableHighlight onPress={() => this.props.navigation.navigate('Map')}
+            style ={styles.button2}>
+           <Text style={{fontSize:15, color:"#fff"}}>Go To Map
+           </Text>
       </TouchableHighlight>
 
       </View>
@@ -42,18 +41,34 @@ export default class SOS extends Component {
 
 const styles = StyleSheet.create({
     container:{
-        flex: 1, alignItems: 'center', justifyContent: 'center'
+        flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#C0C0C0'
     },
-    button:
+    button1:
         {
-            height: 40,
-            width:100,
-            borderRadius:10,
-            //backgroundColor:'red',
-            marginLeft :50,
-            marginRight:50,
-            marginTop :20
-        }
+            width:140,
+            borderRadius:1,
+            backgroundColor:'#D23232', // red
+            borderRadius:5,
+            padding:30,
+            alignItems:"center",
+            marginBottom: 20,
+            //borderColor: "#6F0D0D",
+            //borderWidth:0
+
+
+        },
+    button2:
+        {
+            width:140,
+            borderRadius:1,
+            backgroundColor:'#0066cc', // blue
+            borderRadius:5,
+            padding:30,
+            alignItems:"center",
+            //borderColor: "#9A9A0F",
+            //borderWidth:0
+        },
+
 
 
 

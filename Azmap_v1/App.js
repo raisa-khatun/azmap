@@ -1,9 +1,9 @@
 /**
- * Sample React Native App
+ *
  * https://github.com/facebook/react-native
  *
  * @author Raisa
- *
+ *Feb 03 2020
  */
 
 import React from 'react';
