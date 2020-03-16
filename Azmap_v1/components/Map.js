@@ -151,7 +151,7 @@ export default function Map(props){
     <MapViewDirections
         origin={{latitude: currentLat, longitude:currentLong}}
         destination={{latitude: pointIncreasing[0].latitude, longitude:pointIncreasing[0].longitude}}
-        apikey={"API Key"}
+        apikey={"AIzaSyCRmPE7agQP1spEtXzM5zl7VB-oRj6t1E0"}
         strokeWidth={4}
         strokeColor="green"
         tappable={true}
